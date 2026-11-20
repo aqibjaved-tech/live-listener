@@ -1,25 +1,66 @@
 {
   "expo": {
-    "name": "live-listener",
+    "name": "Live Listener",
     "slug": "live-listener",
+    "scheme": "livelistener",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#090A0C",
+    "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.livelistener.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Live Listener uses your earbud microphone to send sound to the other bud.",
+        "NSBluetoothAlwaysUsageDescription": "Live Listener sees which earbuds are connected so you can choose a sender and a receiver.",
+        "UIBackgroundModes": ["audio"]
+      }
     },
     "android": {
+      "package": "com.livelistener.app",
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MICROPHONE",
+        "android.permission.POST_NOTIFICATIONS"
+      ],
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#090A0C",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      },
-      "predictiveBackGestureEnabled": false
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "react-native-audio-api",
+        {
+          "iosBackgroundMode": true,
+          "iosMicrophonePermission": "Live Listener uses your earbud microphone to send sound to the other bud.",
+          "androidPermissions": [
+            "android.permission.RECORD_AUDIO",
+            "android.permission.MODIFY_AUDIO_SETTINGS",
+            "android.permission.BLUETOOTH_CONNECT",
+            "android.permission.FOREGROUND_SERVICE",
+            "android.permission.FOREGROUND_SERVICE_MICROPHONE",
+            "android.permission.POST_NOTIFICATIONS"
+          ],
+          "androidForegroundService": true,
+          "androidFSTypes": ["microphone", "mediaPlayback"],
+          "androidFSStopWithTask": true
+        }
+      ],
+      "expo-font",
+      "expo-splash-screen",
+      "expo-dev-client"
+    ]
   }
 }

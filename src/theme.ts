@@ -1,0 +1,22 @@
+export const theme = {
+  bg: '#090A0C',
+  raised: '#14161B',
+  raised2: '#1C1F26',
+  line: 'rgba(244, 239, 230, 0.12)',
+  paper: '#F4EFE6',
+  paperDim: '#A39C90',
+  ink: '#12130F',
+  sender: '#8EBCFF',
+  senderSoft: 'rgba(142, 188, 255, 0.16)',
+  receiver: '#D6F25C',
+  receiverSoft: 'rgba(214, 242, 92, 0.16)',
+  live: '#FF4B3A',
+  liveSoft: 'rgba(255, 75, 58, 0.16)',
+  font: {
+    display: 'InstrumentSerif_400Regular',
+    displayItalic: 'InstrumentSerif_400Regular_Italic',
+    body: 'Outfit_400Regular',
+    medium: 'Outfit_500Medium',
+    semibold: 'Outfit_600SemiBold',
+  },
+} as const;
